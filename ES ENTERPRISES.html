@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <style>
+.fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#loader {
+    transition: opacity 0.8s ease;
+}
+</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>ES FITNESS GYM</title>
+</head>
+<body class="bg-black text-white p-10">
+
+  <div
+id="loader"
+class="fixed inset-0 bg-black flex flex-col justify-center items-center z-[9999]">
+
+    <h1 class="text-5xl font-extrabold text-yellow-400">
+        E.S FITNESS
+    </h1>
+
+    <p class="text-gray-400 mt-4 text-lg">
+        Loading...
+    </p>
+
+</div>
+
+<div class="max-w-5xl mx-auto">
+
+<header class="fixed top-0 left-0 w-full z-50 bg-blue-950/80 backdrop-blur border-b border-zinc-800">
+  <nav class="flex justify-between items-center px-6 py-4">
+
+    <!-- Logo -->
+    <img src="Images/logo.png" class="w-14 h-14 object-cover rounded-2xl shadow-2xl">
+
+    <!-- Desktop Links -->
+    <ul class="hidden md:flex gap-8 text-white">
+      <li><a href="#home" class="relative after:absolute after:left-0 after:-bottom-1
+after:w-0 after:h-0.5 after:bg-yellow-400
+after:transition-all after:duration-300
+hover:text-yellow-400 hover:after:w-full">Home</a></li>
+      <li><a href="#services" class="relative after:absolute after:left-0 after:-bottom-1
+after:w-0 after:h-0.5 after:bg-yellow-400
+after:transition-all after:duration-300
+hover:text-yellow-400 hover:after:w-full">Services</a></li>
+      <li><a href="#Trainers" class="relative after:absolute after:left-0 after:-bottom-1
+after:w-0 after:h-0.5 after:bg-yellow-400
+after:transition-all after:duration-300
+hover:text-yellow-400 hover:after:w-full">Our Trainers</a></li>
+      <li><a href="#pricing" class="relative after:absolute after:left-0 after:-bottom-1
+after:w-0 after:h-0.5 after:bg-yellow-400
+after:transition-all after:duration-300
+hover:text-yellow-400 hover:after:w-full">Pricing</a></li>
+      <li><a href="#Reviews" class="relative after:absolute after:left-0 after:-bottom-1
+after:w-0 after:h-0.5 after:bg-yellow-400
+after:transition-all after:duration-300
+hover:text-yellow-400 hover:after:w-full">Reviews</a></li>
+      <li><a href="#Stats" class="relative after:absolute after:left-0 after:-bottom-1
+after:w-0 after:h-0.5 after:bg-yellow-400
+after:transition-all after:duration-300
+hover:text-yellow-400 hover:after:w-full">Stats</a></li>
+      <li><a href="#contact" class="relative after:absolute after:left-0 after:-bottom-1
+after:w-0 after:h-0.5 after:bg-yellow-400
+after:transition-all after:duration-300
+hover:text-yellow-400 hover:after:w-full">Contact</a></li>
+    </ul>
+
+    <!-- Button (Desktop) -->
+    <button class="hidden md:block bg-yellow-400 text-black px-5 py-2 rounded-full font-bold hover:scale-105 transition">
+      Join
+    </button>
+
+    <!-- Mobile Button -->
+    <button onclick="toggleMenu()" class="md:hidden text-3xl text-white">
+      ☰
+    </button>
+
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden flex flex-col bg-gray-300 border-t border-zinc-800 px-6 py-4 gap-4 md:hidden">
+    <a href="#home" class="text-black" onclick="toggleMenu()">Home</a>
+    <a href="#services" class="text-black" onclick="toggleMenu()">Services</a>
+    <a href="#Trainers" class="text-black" onclick="toggleMenu()">Our Trainers</a>
+    <a href="#pricing" class="text-black" onclick="toggleMenu()">Pricing</a>
+    <a href="#Reviews" class="text-black" onclick="toggleMenu()">Reviews</a>
+    <a href="#Stats" class="text-black" onclick="toggleMenu()">Stats</a>
+    <a href="#contact" class="text-black" onclick="toggleMenu()">Contact</a>
+    
+  </div>
+</header>
+
+<section id="home" class="text-center py-24 px-6">
+
+  <p class="text-yellow-400 font-semibold mb-4">
+  🔥 #1 Premium Fitness Experience
+</p>
+
+  <h1 class="text-5xl md:text-7xl font-extrabold text-yellow-400 mb-6">
+    TRANSFORM YOUR BODY
+  </h1>
+
+  <p class="text-lg md:text-2xl text-white max-w-3xl mx-auto mb-10">
+    Premium fitness experience with elite trainers, modern equipment,
+    and luxury facilities.
+  </p>
+
+  <button
+    onclick="showMessage()"
+    class="bg-yellow-400 text-black px-10 py-5 rounded-full font-bold text-xl hover:bg-yellow-300 hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-yellow-400/50">
+
+    Start Membership
+
+  </button>
+
+  <div class="mt-12">
+    <img
+      src="Images/Hero.png"
+      class="w-full h-[300px] md:h-[500px] lg:h-[750px] object-cover
+      rounded-3xl shadow-2xl hover:scale-105 transition-all duration-500"
+      alt="Gym Training">
+  </div>
+
+</section>
+
+  <h2 id="welcomeText" class="text-3xl text-center font-bold text-yellow-400 mt-10">
+  Welcome Athlete
+</h2>
+
+</div>
+
+<div class="grid md:grid-cols-3 gap-6 mt-12">
+
+  <div class="bg-white/10 backdrop-blur-lg border border-white/10 p-6 rounded-2xl text-center hover:scale-105 hover:bg-zinc-800 transition duration-300">
+    <h3 class="text-2xl font-bold text-yellow-400">
+      Modern Equipment
+    </h3>
+    <p class="text-white mt-3">
+      Premium gym machines and weights.
+    </p>
+  </div>
+
+  <div class="bg-white/10 backdrop-blur-lg border border-white/10 p-6 rounded-2xl text-center hover:scale-105 hover:bg-zinc-800 transition duration-300">
+    <h3 class="text-2xl font-bold text-yellow-400">
+      Expert Trainers
+    </h3>
+    <p class="text-white mt-3">
+      Train with professional fitness coaches.
+    </p>
+  </div>
+
+  <div class="bg-white/10 backdrop-blur-lg border border-white/10 p-6 rounded-2xl text-center hover:scale-105 hover:bg-zinc-800 transition duration-300">
+    <h3 class="text-2xl font-bold text-yellow-400">Flexible Plans</h3>
+    <p class="text-white mt-3">
+      Affordable memberships for everyone.
+    </p>
+  </div>
+
+</div>
+
+
+<div class="text-center mt-10 mb-6">
+<button
+onclick="changeCardColor()"
+class="bg-yellow-400 text-black px-6 py-3 rounded-full font-bold">
+  Activate Power Mode 🔥
+</button>
+</div>
+
+<section id="services" class=" fade-up py-24 px-6 bg-zinc-950">
+
+  <h2 class="text-4xl font-bold text-center text-yellow-400 mb-14">
+    Our Services
+  </h2>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+    <!-- Card 1 -->
+    <div id="Strengthcard" class="gym-card fade-up bg-zinc-900 p-8 rounded-3xl text-center
+                hover:scale-105 hover:-translate-y-2
+                transition-all duration-300 shadow-xl" style="transition-delay: 0ms;">
+
+      <div class="text-6xl mb-6">💪</div>
+
+      <h3 class="text-2xl font-bold mb-4">
+        Strength Training
+      </h3>
+
+      <p class="text-gray-400">
+        Build muscle with world-class equipment and expert coaching.
+      </p>
+
+    </div>
+
+    <!-- Card 2 -->
+    <div id="Nutritionplancard" class="gym-card fade-up bg-zinc-900 p-8 rounded-3xl text-center
+                hover:scale-105 hover:-translate-y-2
+                transition-all duration-300 shadow-xl" style="transition-delay: 200ms;">
+
+      <div class="text-6xl mb-6">🥗</div>
+
+      <h3 class="text-2xl font-bold mb-4">
+        Nutrition Plans
+      </h3>
+
+      <p class="text-gray-400">
+        Personalized meal strategies designed around your goals.
+      </p>
+
+    </div>
+
+    <!-- Card 3 -->
+    <div id="elitetraninercard" class="gym-card fade-up bg-zinc-900 p-8 rounded-3xl text-center
+                hover:scale-105 hover:-translate-y-2
+                transition-all duration-300 shadow-xl" style="transition-delay: 400ms;">
+
+      <div class="text-6xl mb-6">🏆</div>
+
+      <h3 class="text-2xl font-bold mb-4">
+        Elite Trainers
+      </h3>
+
+      <p class="text-gray-400">
+        Learn from certified fitness professionals and coaches.
+      </p>
+
+    </div>
+
+    <!-- Card 4 -->
+    <div id="cardioCard" class="gym-card fade-up bg-zinc-900 p-8 rounded-3xl text-center
+                hover:scale-105 hover:-translate-y-2
+                transition-all duration-300 shadow-xl" style="transition-delay: 600ms;">
+
+      <div class="text-6xl mb-6">🏃‍♂️</div>
+
+      <h3 class="text-2xl font-bold mb-4">
+        Cardio Training
+      </h3>
+
+      <p class="text-gray-400">
+        Improve endurance and burn calories with intense sessions.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Trainers -->
+<section id="Trainers" class=" fade-up py-24 px-6 mt-20 bg-black">
+  <h2 class="text-4xl font-bold text-center text-yellow-400 mb-14">
+    Our Professionals
+  </h2>
+
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div class="bg-zinc-900 rounded-3xl p-8 text-center shadow-xl
+hover:scale-105 hover:-translate-y-2 transition-all duration-300">
+      <h3 class="text-3xl text-yellow-400 font-bold mb-4">
+        David Brown
+      </h3>
+      <p class="text-white font-semibold mb-2">
+  Strength Coach
+</p>
+
+<p class="inline-block bg-yellow-400 text-black px-4 py-2 rounded-full font-bold">
+🏅 8+ Years Experience
+</p>
+
+       <div class="mt-12">
+    <img
+      src="Images/Trainer-1.jpg"
+      class="w-full h-80 object-cover rounded-3xl shadow-2xl hover:scale-105 transition-all duration-500"
+      alt="Gym Training">
+  </div>
+
+  <p class="text-gray-400">
+  8+ years of experience helping members build muscle, increase strength, and achieve peak performance.
+</p>
+
+<p class="mt-4 text-yellow-400">
+  ⭐⭐⭐⭐⭐
+</p>
+
+<button
+class="bg-yellow-400 text-black px-5 py-2 rounded-full font-bold mt-4 hover:scale-105 transition">
+Book Session
+</button>
+
+</div>
+
+<div class="bg-zinc-900 rounded-3xl p-8 text-center shadow-xl
+hover:scale-105 hover:-translate-y-2 transition-all duration-300">
+      <h3 class="text-3xl text-yellow-400 font-bold mb-4">
+        Jessica Bruno
+      </h3>
+      <p class="text-white font-semibold mb-2">
+  Nutrition Expert
+</p>
+
+<p class="inline-block bg-yellow-400 text-black px-4 py-2 rounded-full font-bold">
+🏅 6+ Years Experience
+</p>
+
+       <div class="mt-12">
+    <img
+      src="Images/Trainer-2.jpg"
+      class="w-full h-80 object-cover rounded-3xl shadow-2xl hover:scale-105 transition-all duration-500"
+      alt="Gym Training">
+  </div>
+
+  <p class="text-gray-400">
+  Creates personalized meal plans and nutrition strategies to maximize fitness results and healthy living.
+</p>
+
+<p class="mt-4 text-yellow-400">
+  ⭐⭐⭐⭐⭐
+</p>
+
+<button
+class="bg-yellow-400 text-black px-5 py-2 rounded-full font-bold mt-4 hover:scale-105 transition">
+Book Session
+</button>
+
+</div>
+
+
+<div class="bg-zinc-900 rounded-3xl p-8 text-center shadow-xl
+hover:scale-105 hover:-translate-y-2 transition-all duration-300">
+      <h3 class="text-3xl text-yellow-400 font-bold mb-4">
+        Michael Larson
+      </h3>
+      <p class="text-white font-semibold mb-2">
+  Cardio Specialist
+</p>
+<p class="inline-block bg-yellow-400 text-black px-4 py-2 rounded-full font-bold">
+🏅 9+ Years Experience
+</p>
+
+       <div class="mt-12">
+    <img
+      src="Images/Trainer-3.jpg"
+      class="w-full h-80 object-cover rounded-3xl shadow-2xl hover:scale-105 transition-all duration-500"
+      alt="Gym Training">
+  </div>
+
+  <p class="text-gray-400">
+  Expert in endurance training, fat loss programs, and high-intensity workouts for all fitness levels.
+</p>
+
+<p class="mt-4 text-yellow-400">
+  ⭐⭐⭐⭐⭐
+</p>
+
+<button
+class="bg-yellow-400 text-black px-5 py-2 rounded-full font-bold mt-4 hover:scale-105 transition">
+Book Session
+</button>
+
+</div>
+
+
+
+  </div>
+</section>
+
+<section id="pricing" class=" fade-up py-24 px-6 mt-20 bg-black">
+
+  <h2 class="text-4xl font-bold text-center text-yellow-400 mb-14">
+    Membership Plans
+  </h2>
+
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+    <!-- BASIC -->
+    <div class="bg-zinc-900 rounded-3xl p-8 text-center shadow-xl
+hover:-translate-y-1 hover:shadow-2xl
+transition-all duration-300">
+
+      <h3 class="text-2xl font-bold mb-4">
+        Bronze
+      </h3>
+
+      <p class="text-5xl font-extrabold text-yellow-400 mb-6">
+        $29
+      </p>
+
+      <ul class="space-y-3 text-gray-300 mb-8">
+        <li>✔ Gym Access</li>
+        <li>✔ Locker Room</li>
+        <li>✔ Basic Support</li>
+      </ul>
+
+      <button onclick="
+selectPlan('Bronze');
+document.getElementById('contact').scrollIntoView({
+behavior:'smooth'
+});
+" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-bold hover:scale-105 transition">
+        Select Bronze
+      </button>
+
+    </div>
+
+    <!-- PRO -->
+    <div class="bg-zinc-900 rounded-3xl p-8 text-center shadow-xl
+hover:scale-105 border-2 border-yellow-400 hover:-translate-y-1 hover:shadow-2xl
+transition-all duration-300">
+
+      <p class="font-bold mb-2">
+        ⭐ MOST POPULAR
+      </p>
+
+      <h3 class="text-2xl font-bold mb-4">
+        Silver
+      </h3>
+
+      <p class="text-5xl font-extrabold mb-6">
+        $59
+      </p>
+
+      <ul class="space-y-3 mb-8">
+        <li>✔ Everything in Basic</li>
+        <li>✔ Personal Trainer</li>
+        <li>✔ Nutrition Plan</li>
+        <li>✔ Priority Support</li>
+      </ul>
+
+      <button onclick="
+selectPlan('Silver');
+document.getElementById('contact').scrollIntoView({
+behavior:'smooth'
+});
+" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-bold hover:scale-105 ">
+        Select Silver
+      </button>
+
+    </div>
+
+    <!-- ELITE -->
+    <div class="bg-zinc-900 rounded-3xl p-8 text-center shadow-xl
+hover:-translate-y-1 hover:shadow-2xl
+transition-all duration-300">
+
+
+      <h3 class="text-2xl font-bold mb-4">
+        Golden
+      </h3>
+
+      <p class="text-5xl font-extrabold text-yellow-400 mb-6">
+        $99
+      </p>
+
+      <ul class="space-y-3 text-gray-300 mb-8">
+        <li>✔ VIP Access</li>
+        <li>✔ Dedicated Coach</li>
+        <li>✔ Custom Programs</li>
+        <li>✔ 24/7 Support</li>
+      </ul>
+
+      <button onclick="
+selectPlan('Golden');
+document.getElementById('contact').scrollIntoView({
+behavior:'smooth'
+});
+" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-bold hover:scale-105 transition">
+        Select Gold
+      </button>
+
+    </div>
+
+    <p
+    id="selectedPlan"
+    class="text-center text-2xl text-yellow-400 font-bold mt-10">
+  </p>
+
+  </div>
+
+</section>
+
+<section id="Stats" class=" fade-up py-20 bg-zinc-950">
+
+  <h2 class="text-4xl font-bold text-center text-yellow-400 mb-12">
+    Our Achievements
+  </h2>
+
+  <div class="grid md:grid-cols-4 gap-8 text-center">
+
+<div class="bg-zinc-900 p-8 rounded-3xl shadow-xl hover:scale-105 transition-all duration-300">
+ <h3 id="members" class="text-5xl font-bold text-yellow-400">0</h3>
+<p class="text-gray-400 mt-2">Happy Members</p>
+</div>
+
+    <div class="bg-zinc-900 p-8 rounded-3xl shadow-xl hover:scale-105 transition-all duration-300">
+      <h3 id="trainers" class="text-5xl font-bold text-yellow-400">0</h3>
+<p class="text-gray-400 mt-2">Expert Trainers</p>
+    </div>
+
+    <div class="bg-zinc-900 p-8 rounded-3xl shadow-xl hover:scale-105 transition-all duration-300">
+      <h3 id="years" class="text-5xl font-bold text-yellow-400">0</h3>
+<p class="text-gray-400 mt-2">Years Experience</p>
+    </div>
+
+    <div class="bg-zinc-900 p-8 rounded-3xl shadow-xl hover:scale-105 transition-all duration-300">
+      <h3 id="access" class="text-5xl font-bold text-yellow-400">24/7</h3>
+<p class="text-gray-400 mt-2">Gym Access</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="Reviews" class=" fade-up py-24 px-6 bg-zinc-950">
+
+  <h2 class="text-4xl font-bold text-center text-yellow-400 mb-10">
+    What Our Members Say
+  </h2>
+
+  <div class="max-w-3xl mx-auto bg-zinc-900 p-10 rounded-3xl text-center shadow-xl">
+
+    <p class="text-yellow-400 text-2xl mb-4">
+      ⭐⭐⭐⭐⭐
+    </p>
+
+    <p id="testimonialText" class="text-xl text-gray-300 mb-6">
+      "E.S FITNESS helped me lose 15kg and completely transform my lifestyle."
+    </p>
+
+    <h3 id="testimonialName" class="text-yellow-400 font-bold text-xl">
+      Sarah Johnson
+    </h3>
+
+  </div>
+
+</section>
+
+<section id="contact" class=" fade-up mt-20 bg-black">
+
+  <h2 class="text-5xl font-bold text-center text-yellow-400 mb-10">
+    Contact Us
+  </h2>
+
+  <div class="max-w-2xl mx-auto">
+
+    <input id="name"
+      type="text"
+      placeholder="Your Name"
+      class="w-full p-4 rounded-xl text-black mb-4"
+    >
+
+    <input id="email"
+      type="email"
+      placeholder="Your Email"
+      class="w-full p-4 rounded-xl text-black mb-4"
+    >
+
+    <textarea id="message"
+      placeholder="Your Message"
+      class="w-full p-4 rounded-xl text-black mb-4 h-40"
+    ></textarea>
+
+    <button onclick="sendMessage()"
+      class="bg-yellow-400 text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition">
+      Send Message
+    </button>
+
+    <p id="formMessage"
+class="text-center mt-6 text-xl font-bold">
+</p>
+
+  </div>
+
+</section>
+
+<footer class="text-center mt-20 border-t border-zinc-700 pt-8">
+
+  <h3 class="text-2xl font-bold text-yellow-400">
+    E.S FITNESS
+  </h3>
+
+  <p class="text-gray-400 mt-2">
+    Transform Your Body. Transform Your Life.
+  </p>
+
+  <p class="text-gray-500 mt-6">
+    © 2026 E.S FITNESS. All Rights Reserved.
+  </p>
+
+<div class="mt-6 space-y-3 text-gray-400">
+  <p>📧 info@esfitness.com</p>
+  <p>📞 +1 234 567 890</p>
+  <p>📍 New York, USA</p>
+</div>
+
+</footer>
+
+<button
+id="topBtn"
+onclick="scrollToTop()"
+class="hidden fixed bottom-8 right-8 bg-yellow-400 text-black w-14 h-14 rounded-full shadow-xl hover:scale-110 transition-all duration-300">
+
+⬆
+
+</button>
+
+
+<script>
+  function sendMessage() {
+
+    const name = document.getElementById("name").value.trim();
+
+    const email = document.getElementById("email").value.trim();
+
+    const message = document.getElementById("message").value.trim();
+
+    const output = document.getElementById("formMessage");
+
+    if (name === "" || email === "" || message === "") {
+
+        output.innerHTML = "❌ Please fill in all fields.";
+
+        output.classList.remove("text-green-400");
+
+        output.classList.add("text-red-400");
+
+        return;
+    }
+
+    output.innerHTML =
+        "✅ Thanks for contacting E.S FITNESS! We'll get back to you soon.";
+
+    output.classList.remove("text-red-400");
+
+    output.classList.add("text-green-400");
+
+    document.getElementById("name").value = "";
+
+    document.getElementById("email").value = "";
+
+    document.getElementById("message").value = "";
+
+}
+
+
+
+  const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+
+    });
+
+}, {
+    threshold: 0.2
+});
+
+document.querySelectorAll(".fade-up").forEach((section) => {
+    observer.observe(section);
+});
+
+
+
+let started = false;
+
+function animateValue(id, start, end, duration, suffix = "") {
+
+    let element = document.getElementById(id);
+
+    let range = end - start;
+
+    let current = start;
+
+    let increment = end > start ? 1 : -1;
+
+    let stepTime = Math.abs(Math.floor(duration / range));
+
+    let timer = setInterval(function () {
+
+        current += increment;
+
+        element.innerHTML = current.toLocaleString() + suffix;
+
+        if (current == end) {
+
+            clearInterval(timer);
+
+        }
+
+    }, stepTime);
+
+}
+
+window.addEventListener("scroll", function () {
+
+    const stats = document.getElementById("Stats");
+
+    const position = stats.getBoundingClientRect().top;
+
+    const screen = window.innerHeight;
+
+    if (position < screen - 150 && !started) {
+
+        started = true;
+
+        animateValue("members",0,10000,2000,"+");
+        animateValue("trainers",0,25,1500,"+");
+        animateValue("years",0,50,1500,"+");
+
+    }
+
+});
+
+
+const testimonials = [
+  {
+    text: "E.S FITNESS helped me lose 15kg and completely transform my lifestyle.",
+    name: "Sarah Johnson"
+  },
+
+  {
+    text: "The trainers are professional, motivating, and always available.",
+    name: "Michael Carter"
+  },
+
+  {
+    text: "Clean facilities, amazing equipment, and a great fitness community.",
+    name: "Emily Davis"
+  }
+];
+
+let currentTestimonial = 0;
+
+function changeTestimonial() {
+
+  currentTestimonial++;
+
+  if (currentTestimonial >= testimonials.length) {
+    currentTestimonial = 0;
+  }
+
+  document.getElementById("testimonialText").innerHTML =
+    '"' + testimonials[currentTestimonial].text + '"';
+
+  document.getElementById("testimonialName").innerHTML =
+    testimonials[currentTestimonial].name;
+}
+
+setInterval(changeTestimonial, 3000);
+
+
+function selectPlan(planName) {
+  document.getElementById("selectedPlan").innerHTML =
+    "🎉 Great Choice! You selected the <span class='text-white'>" +
+    planName +
+    "</span> Plan. Our team will contact you soon!";
+}
+
+  window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        const loader = document.getElementById("loader");
+
+        loader.style.opacity = "0";
+
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 800);
+
+    }, 1500);
+
+});
+
+function showMessage() {
+  alert("Thanks for joining E.S FITNESS!");
+}
+
+function changeCardColor() {
+
+  const cards = document.querySelectorAll(".gym-card");
+
+  cards.forEach(card => {
+    card.classList.add(
+      "ring-2",
+      "ring-yellow-400"
+    );
+  });
+
+}
+
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("hidden");
+}
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (pageYOffset >= sectionTop - 150) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("text-yellow-400");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("text-yellow-400");
+    }
+  });
+});
+
+  const topButton = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 400) {
+
+        topButton.classList.remove("hidden");
+
+    } else {
+
+        topButton.classList.add("hidden");
+
+    }
+
+});
+
+function scrollToTop() {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+</script>
+
+
+</body>
+</html>
+
+
